@@ -1,0 +1,26 @@
+{
+  "name": "react-component-library",
+  "version": "1.0.0",
+  "description": "A component library and living style guide for react components",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+ssh://git@github.com/polarbearjs/react-component-library.git"
+  },
+  "keywords": [
+    "react",
+    "styleguide",
+    "style-guide",
+    "component",
+    "library"
+  ],
+  "author": "Ben Janecke",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/polarbearjs/react-component-library/issues"
+  },
+  "homepage": "https://github.com/polarbearjs/react-component-library#readme"
+}
