@@ -1,0 +1,13 @@
+{
+  "parser": "babel-eslint",
+  "extends": "airbnb",
+  "env": {
+    "browser": true,
+    "node": true,
+    "mocha": true
+  },
+  "rules": {
+    "new-cap": [2, { "capIsNewExceptions": [ ] }],
+    "no-shadow": [0, {}]
+  }
+}
