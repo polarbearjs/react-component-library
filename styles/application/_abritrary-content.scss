@@ -1,0 +1,14 @@
+.abritrary-content {
+  width: 100%;
+  height: 100%;
+  background-color: rgb(237, 239, 240);
+  text-align: center;
+  display: table-cell;
+  padding: 1em;
+}
+
+.abritrary-content__text {
+  display: inline-block;
+  vertical-align: middle;
+  color: #333;
+}
