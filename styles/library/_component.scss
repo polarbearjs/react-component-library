@@ -1,0 +1,20 @@
+.library__component {
+  @include clearfix;
+  background-color: #ffffff;
+  border-radius: 0.2em;
+  box-shadow: 0em 0em 0.2em 0em rgba(0, 0, 0, 0.75);
+  padding: 1em;
+  margin-bottom: 1em;
+}
+
+.library__component__container {
+  @include clearfix;
+}
+
+.library__component__example-backgound {
+  background-color: $brand-subtle;
+}
+
+.library__component__example-border {
+  border: solid 1px rgb(51, 51, 51);
+}

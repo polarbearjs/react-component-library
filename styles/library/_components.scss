@@ -1,0 +1,22 @@
+.library__components__wrapper {
+  width: 100%;
+  height: 100%;
+  float: left;
+  overflow: scroll;
+  background-color: $brand-subtle;
+  border {
+    left: solid 1px rgb(51, 51, 51);
+  }
+}
+
+.library__components__content {
+  padding: 1em;
+  float: left;
+  width: 100%;
+}
+
+@media (min-width: 62em) {
+  .library__components__wrapper {
+    width: 80%;
+  }
+}

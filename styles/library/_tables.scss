@@ -1,0 +1,54 @@
+.library__table__wrapper {
+  min-width: 50%;
+  max-width: 100%;
+  overflow: scroll;
+}
+
+.library__table {
+  text-align: left;
+  min-width: 50%;
+  max-width: 100%;
+  border: 1px solid $brand-shade;
+  border-collapse: collapse;
+
+  thead,
+  tbody,
+  tfoot {
+    tr {
+      th,
+      td {
+
+        border: 1px solid $brand-shade;
+        padding: 0.5em;
+      }
+    }
+  }
+  thead,
+  tbody,
+  tfoot {
+    tr {
+      td.library__table--nopad {
+        padding: 0;
+        margin: 0;
+        pre {
+          margin: 0;
+        }
+      }
+    }
+  }
+
+  thead {
+    tr {
+      th,
+      td {
+        border-bottom-width: 2px;
+      }
+    }
+  }
+
+  tbody {
+    tr:nth-of-type(odd) {
+      background-color: $brand-subtle;
+    }
+  }
+}
