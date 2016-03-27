@@ -8,17 +8,22 @@ var CopyWebpackPlugin = require('copy-webpack-plugin');
 module.exports = {
   context: path.join(__dirname),
 
-  entry: [
-    './node_modules/normalize.css/normalize.css',
-    './node_modules/highlight.js/styles/solarized_light.css',
-    './styles/library/library.scss',
-    './styles/application/application.scss',
-    './library/index.js'
-  ],
+  entry: {
+    library: [
+      './node_modules/normalize.css/normalize.css',
+      './node_modules/highlight.js/styles/solarized_light.css',
+      './styles/library/library.scss',
+    ],
+    application: [
+      './node_modules/normalize.css/normalize.css',
+      './styles/application/application.scss',
+    ],
+    app: './library/index.js',
+  },
 
   output: {
     path: path.join(__dirname, 'dist'),
-    filename: 'app.js',
+    filename: '[name].js',
   },
 
   plugins: [
