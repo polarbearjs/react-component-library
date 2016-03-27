@@ -1,3 +1,2 @@
-require('babel-core/register');
-exports.Library = require('./library');
-module.exports = require('./components');
+export * from './components';
+export * as Library from './Library';
