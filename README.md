@@ -143,8 +143,8 @@ Once you have that you can import components based on their groups
 
 ES2015
 ```js
-import { Components } from 'your-package-name';
-const { Grid, Row, Col } = Components.atoms;
+import { atoms } from 'your-package-name';
+const { Grid, Row, Col } = atoms;
 
 const render = () => (
   <Grid>
@@ -162,7 +162,7 @@ const render = () => (
 
 ES5
 ```js
-var components = require('your-package-name').Components;
+var components = require('your-package-name');
 
 var Grid = components.atoms.Grid;
 var Row = components.atoms.Row;
