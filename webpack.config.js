@@ -18,7 +18,6 @@ module.exports = {
     application: [
       './styles/application/application.scss',
     ],
-    main: './index.js',
   },
 
   output: {
