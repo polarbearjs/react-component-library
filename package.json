@@ -4,7 +4,8 @@
   "description": "A component library and living style guide for react components",
   "main": "index.js",
   "scripts": {
-    "webpack": "webpack"
+    "webpack": "webpack",
+    "build": "webpack --progress"
   },
   "repository": {
     "type": "git",
@@ -30,6 +31,7 @@
     "babel-preset-stage-0": "^6.5.0",
     "classnames": "^2.2.3",
     "css-loader": "^0.23.1",
+    "extract-text-webpack-plugin": "^1.0.1",
     "normalize.css": "^4.0.0",
     "react": "^0.14.7",
     "react-dom": "^0.14.7",
