@@ -1,0 +1,6 @@
+#!/usr/bin/env sh
+
+babel library/ -d dist/lib/library/
+babel components/ -d dist/lib/components/
+babel index.js -d dist/lib/
+webpack --progress

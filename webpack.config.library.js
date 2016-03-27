@@ -18,7 +18,7 @@ module.exports = {
       './node_modules/normalize.css/normalize.css',
       './styles/application/application.scss',
     ],
-    app: './library/index.js',
+    app: './scripts/render-library.js',
   },
 
   output: {

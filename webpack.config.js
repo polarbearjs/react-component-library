@@ -10,19 +10,15 @@ var extractCss = new ExtractTextPlugin('[name].css');
 
 module.exports = {
   entry: {
+    normalize: './node_modules/normalize.css/normalize.css',
+    highlight: './node_modules/highlight.js/styles/solarized_light.css',
     library: [
-      './node_modules/normalize.css/normalize.css',
-      './node_modules/highlight.js/styles/solarized_light.css',
       './styles/library/library.scss',
     ],
     application: [
-      './node_modules/normalize.css/normalize.css',
       './styles/application/application.scss',
     ],
-    app: [
-      './library/index.js',
-      './components/index.js',
-    ],
+    main: './index.js',
   },
 
   output: {
