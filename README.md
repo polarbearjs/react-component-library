@@ -19,6 +19,7 @@ This is a scaffold for a react component library.
 
 ```
 chmod +x ./bin/library-server // You only have to run this once this makes the server executable
+chmod +x ./bin/build // You only have to run this once this makes the build executable
 
 ./bin/library-server // This starts a server on port 8080
 or
@@ -34,7 +35,7 @@ The dev server will watch your filesystem for changes and automagically recompil
 Assets will be checked in to version control so they can be used in client applications loaders.
 
 ```
-npm build // will compile assets into dist/ folder
+npm build // will compile assets into dist/ folder and source in to the lib folder
 ```
 # Importing styles from another project
 
@@ -68,7 +69,12 @@ Include a reference to your component library in your package.json
 
 ## Basic
 
-Once you have a reference to the project your styles will live in `node_modules/your-package-name/dist/application.css` and `node_modules/your-package-name/dist/library.css` respectively.
+Once you have a reference to the project your styles will live in
+
+* `node_modules/your-package-name/dist/normalize.css`
+* `node_modules/your-package-name/dist/highlight.css`
+* `node_modules/your-package-name/dist/library.css`
+* `node_modules/your-package-name/dist/application.css`
 
 You will probably want to set up a step in your build process that copies the files from `node_modules` into your asset folder.
 
@@ -80,6 +86,8 @@ The simplest route is to add the stylesheets as entry points to your webpack con
 {
   entry: [
     ...
+    './node_modules/your-package-name/dist/normalize.css',
+    './node_modules/your-package-name/dist/highlight.css',
     './node_modules/your-package-name/dist/library.css',
     './node_modules/your-package-name/dist/application.css',
   ],
@@ -143,8 +151,8 @@ Once you have that you can import components based on their groups
 
 ES2015
 ```js
-import { atoms } from 'your-package-name';
-const { Grid, Row, Col } = atoms;
+import * as Groups from 'your-package-name';
+const { atoms: { Grid, Row, Col } } = Groups;
 
 const render = () => (
   <Grid>
