@@ -194,6 +194,174 @@ function render() {}
 
 # Defining Components
 
-Components are defined in groups.
+Components are defined in groups and live under `/components`.
 
-A good basline is [Atomic Design](http://patternlab.io/about.html) the groups being `atoms, molecules, organisims, templates, pages`
+A good baseline is [Atomic Design](http://patternlab.io/about.html) the groups being `atoms, molecules, organisms, templates, pages`
+
+The folder structure for this would be
+
+```
+./components
+  ./atoms
+    SomeAtom.js
+    SomeOtherAtom.js
+    ...
+    index.js
+  ./molecules
+    SomeMolecule.js
+    ...
+    index.js
+  ./organisms
+    SomeOrganisim.js
+    ...
+    index.js
+  ./templates
+    SomeTemplate.js
+    ...
+    index.js
+  ./pages
+    SomePage.js
+    index.js
+  index.js
+```
+
+The `index.js` for components.
+
+```js
+// define groups in order you want them to appear in Library
+import * as atoms from './atoms'
+import * as molecules from './molecules'
+import * as organisms from './organisms'
+import * as templates from './templates'
+import * as pages from './pages'
+```
+
+The `index.js` for a group.
+
+```js
+// define components in order you want them to appear in the library
+export SomeAtom from './SomeAtom';
+export SomeOtherAtom from './SomeOtherAtom';
+...
+```
+
+# Defining a component
+
+The basic structure is
+
+ES2015
+```js
+import React, { PropTypes } from 'react';
+
+const description = `
+  A react component of sorts
+`;
+
+const usage = `
+<Compy
+  prop={'value'}
+/>
+`;
+
+const propTypes = {
+  prop: PropTypes.string.isRequired,
+};
+
+const docPropTypes = {
+  prop: {
+    description: 'Some Prop',
+    required: true,
+    value: `Some Value`,
+  },
+};
+
+const exampleData = {
+  prop: 'I am example data',
+};
+
+const Compy = ({
+  prop,
+}) => (
+  <span>
+    {prop}
+  </span>
+);
+
+Compy.description = description;
+Compy.usage = usage;
+Compy.propTypes = propTypes;
+Compy.docPropTypes = docPropTypes;
+Compy.exampleData = exampleData;
+
+export default Compy;
+```
+
+### Description
+
+Description is a brief summary for your component and will be the first thing displayed after the title of your component in the library.
+
+Remember to add this as a property on your component.
+
+```js
+Component.description = description;
+```
+
+### Usage
+
+Usage is an example of how to use your component. It's a multi line string. And should have no left padding but can have blank top and bottom lines.
+
+We played with generating this but wound up not doing it because components with children need to have a sensible indented structure.
+
+### docPropTypes
+
+Documentation for your properties that will be output as a table.
+
+We wish we could infer this from normal `propTypes` but it's not feasible in this setup because it involves a AST of each component and augmenting that.
+
+It's structure is
+
+```js
+const docPropTypes = {
+  prop: {
+    description: 'Some Prop',
+    required: true,
+    value: ``,
+  },
+  otherProp: {
+    ...
+  },
+};
+```
+
+#### description
+
+A quick description of the component.
+
+#### required
+
+Wether the prop is required or not.
+
+#### value
+
+An example value for the property.
+
+### Example data
+
+This will be used to render a preview of your component.
+
+```js
+const exampleData = {
+  prop: 'I am example data',
+  children: (
+    <div>
+      <div>
+        <div>
+          <span>This is how you define children.
+        </div>
+      </div>
+    </div>
+  )
+};
+```
+
+# Fin.
